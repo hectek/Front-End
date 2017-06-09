@@ -1,11 +1,8 @@
-﻿/// <reference path="cmsContent/templates/_cmsContentCreateEdit.html" />
-/// <reference path="cmsContent/templates/_cmsContentCreateEdit.html" />
-/// <reference path="cmsContent/templates/_cmsContentCreateEdit.html" />
-/// <reference path="cmsContent/templates/_cmsContentCreateEdit.html" />
-// =================================  ROUTE CONFIGURATION   ========================================== //
+
+// =================================  ROUTE CONFIGURATION WITH ANGULAR ========================================== //
 
 (function () {
-    "use ctrict";
+    "use strict";
 
     angular.module(APPNAME)
         .config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
@@ -13,45 +10,45 @@
             $locationProvider.hashPrefix('!');
 
             $routeProvider.when('/', {
-                templateUrl: '/Scripts/app/cms/cmsPagesView.html',
-                controller: 'cmsPagesController',
-                controllerAs: 'pagesVm'
+                templateUrl: '/FILEPATH/View1.html',
+                controller: 'Controller1',
+                controllerAs: 'ctrl1'
             }).when('/navbar', {
-                templateUrl: '/Scripts/app/cms/cmsNavigationView.html',
-                controller: 'orderNavigationBarController',
-                controllerAs: 'navCont'
+                templateUrl: '/FILEPATH/View2.html',
+               controller: 'Controller2',
+                controllerAs: 'ctrl2'
             }).when('/metatags/:id/:ownerTypeId', {
-                templateUrl: "/Scripts/app/cms/cmsMetatagsView.html",
-                controller: 'cmsMetaController',
-                controllerAs: 'metaVm'
+                templateUrl: "/FILEPATH/View3.html",
+               controller: 'Controller3',
+                controllerAs: 'ctrl3'
             }).when('/templates', {
-                templateUrl: "/Scripts/app/cms/cmsTemplatesView.html",
-                controller: 'cmsTemplatesController',
-                controllerAs: 'tmpCtrl'
+                templateUrl: "/FILEPATH/View4.html",
+                controller: 'Controller4',
+                controllerAs: 'ctrl4'
             }).when('/templates/create', {
-                templateUrl: "/Scripts/app/cms/cmsTemplateForm.html",
-                controller: 'cmsCreateTemplatesController',
-                controllerAs: 'mngTemp'
+                templateUrl: "/FILEPATH/View5.html",
+                controller: 'Controller5',
+                controllerAs: 'ctrl5'
             }).when('/templates/edit/:id', {
-                templateUrl: "/Scripts/app/cms/cmsTemplateForm.html",
-                controller: 'cmsCreateTemplatesController',
-                controllerAs: 'mngTemp'
+                templateUrl: "/FILEPATH/View6.html",
+                controller: 'Controller6',
+                controllerAs: 'ctrl6'
             }).when('/create', {
-                templateUrl: "/Scripts/app/cms/cmsPagesCreateEditView.html",
-                controller: 'cmsCreatePageController',
-                controllerAs: 'cms'
+                templateUrl: "/FILEPATH/View7.html",
+               controller: 'Controller7',
+                controllerAs: 'ctrl7'
             }).when('/edit/:id', {
-                templateUrl: "/Scripts/app/cms/cmsPagesCreateEditView.html",
-                controller: 'cmsCreatePageController',
-                controllerAs: 'cms'
+                templateUrl: "/FILEPATH/View8.html",
+                controller: 'Controller8',
+                controllerAs: 'ctrl8'
             }).when('/navbar/:id', {
-                templateUrl: '/Scripts/app/cms/cmsNavigationView.html',
-                controller: 'orderNavigationBarController',
-                controllerAs: 'navCont'
+                templateUrl: '/FILEPATH/View9.html',
+               controller: 'Controller9',
+                controllerAs: 'ctrl9'
             }).when('/content/:id/:templateId/:url', {
-                templateUrl: '/Scripts/app/cms/cmsContentCreateEditView.html',
-                controller: 'cmsCreateEditContentController',
-                controllerAs: 'editContentCtrl'
+                templateUrl: '/FILEPATH/View9.html',
+               controller: 'Controller10',
+                controllerAs: 'ctrl10'
             });
 
 

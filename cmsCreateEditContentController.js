@@ -1,4 +1,4 @@
-﻿// ===================== 
+﻿// ===================== CMS Create and Edit Controller =================================// 
 
 (function () {
     "use strict";
@@ -11,10 +11,14 @@
         var vm = this;
         vm.$scope = $scope;
         $baseController.merge(vm, $baseController);
+        // Some service injected 
         vm.contentService = $cmsContentService;
         vm.$imageService = $imageService;
+        
         vm.notifycontent = vm.contentService.getNotifier($scope);
         vm.notifyimage = vm.$imageService.getNotifier($scope);
+        
+        // Use Angular Bootsrap Modal
         vm.$uibModal = $uibModal;
 
         var pageUrl = vm.$routeParams.url;
@@ -41,6 +45,7 @@
         vm.modalItems = [];
         vm.textEditorSelected = null;
 
+        // Functions 
         vm.currentKey = _currentKey;
         vm.updateContent = _updateContent;
         vm.trustSrc = _trustSrc;
@@ -56,6 +61,7 @@
         function _render() {
 
             _scrollTop();
+            // Ajax functions 
             vm.contentService.getSections(_onGetSections, _onSectionsError);
             vm.contentService.getTemplateKeys(templateId, _onGetKeysSuccess, _onKeysError);
 
@@ -100,7 +106,6 @@
                 vm.contentService.createContent(vm.content, _onCreateContent, _onCreateError);
             }
         }
-
 
         // ON GET KEYS SUCCESS
         function _onGetKeysSuccess(data) {
@@ -250,7 +255,7 @@
 
             var modalInstance = vm.$uibModal.open({
                 animation: true,
-                templateUrl: '/Scripts/app/cms/cmsContent/templates/_cmsImagesModal.html',
+                templateUrl: 'FILEPATH//_cmsImagesModal.html',
                 controller: 'contentImageModalController as imgctrl',
                 size: 'lg',
                 resolve: {
@@ -273,7 +278,7 @@
         function _textEditor(contentItem) {
             var modalInstance = vm.$uibModal.open({
                 animation: true,
-                templateUrl: '/Scripts/app/cms/cmsContent/templates/_cmsTextEditorModal.html',
+                templateUrl: 'FILEPATH/_cmsTextEditorModal.html',
                 controller: 'cmstextEditorModalController as txtEditCtrl',
                 size: 'lg',
                 resolve: {

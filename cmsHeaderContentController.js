@@ -43,11 +43,6 @@
             vm.$alertService.error(jqXHR.responseText, "Get Header failed");
         }
 
-        // SELECT TEMPLATE (LEGACY NG)
-        function _templateUrl() {
-            return '/Scripts/app/cms/cmsContent/templates/_cmsContentHeaderTest.html';
-        }
-
         // SANITIZE FILES
         function _trustSrc(src) {
             return $sce.trustAsResourceUrl(src);

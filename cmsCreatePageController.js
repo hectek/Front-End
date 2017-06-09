@@ -81,6 +81,7 @@
         _render();
 
         function _render() {
+            
             _setUp();
             vm.cmsService.getTypes(_getTypesSuccess, _getTypesError);
 
@@ -89,7 +90,7 @@
                 document.getElementById('cmsPage').scrollIntoView();
                 vm.cmsService.getById(vm.cmsPageId, _getCmsOnSuccess, _getCmsOnError);
             }
-
+            
             vm.cmsTemplateService.getAll(_onGetTemplatesSuccess, _onGetTemplatesError);
         }
 

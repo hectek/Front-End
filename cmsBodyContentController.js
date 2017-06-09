@@ -39,12 +39,7 @@
 
         // ON GET ERROR
         function _getOnError(jqXHR) {
-            vm.$alertService.error(jqXHR.responseText, "Get Header failed");
-        }
-
-        // SELECT TEMPLATE LEGACY (NG)
-        function _templateUrl() {
-            return '/Scripts/app/cms/cmsContent/templates/_cmsContentTest.html';
+            vm.$alertService.error(jqXHR.responseText, "Get Body failed");
         }
 
         // SANITIZE FILES
